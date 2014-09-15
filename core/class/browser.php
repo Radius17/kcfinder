@@ -653,7 +653,7 @@ class browser extends uploader {
         )
             return json_encode(array('version' => $this->session['checkVersion']));
 
-        $ver = phpGet::get("http://kcfinder.sunhater.com/checkVersion.php");
+        $ver = phpGet::get($this->config['updateCheckURL']);
 
         if (isset($ver) && preg_match('/^\d+\.\d+$/', $ver)) {
             $this->session['checkVersion'] = $ver;

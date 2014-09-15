@@ -21,7 +21,7 @@ return array(
 
 // GENERAL SETTINGS
 
-    'disabled' => true,
+    'disabled' => false,
     'uploadURL' => "upload",
     'uploadDir' => "",
     'theme' => "default",
@@ -59,6 +59,7 @@ return array(
 
     'denyZipDownload' => false,
     'denyUpdateCheck' => false,
+    'updateCheckUrl'=> 'http://localhost/checkVersion.php',
     'denyExtensionRename' => false,
 
 
