@@ -26,10 +26,11 @@ class QLP{
 			include_once($init_3);
 			if(QLPSession::getInstance()->isLoggedIn()){
 				self::$authenticated = true;
-				$_SESSION['KCFINDER'] = array();
-				//if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
-				if(!isset($_SESSION['KCFINDER']['disabled'])) $_SESSION['KCFINDER']['disabled'] = false;
-				$_SESSION['KCFINDER']['_check4htaccess'] = false;
+				//$_SESSION['KCFINDER'] = array();
+				if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
+//				if(!isset($_SESSION['KCFINDER']['disabled'])) $_SESSION['KCFINDER']['disabled'] = false;
+				$_SESSION['KCFINDER']['disabled'] = false;
+				$_SESSION['KCFINDER']['_check4htaccess'] = true;
 				$_SESSION['KCFINDER']['uploadURL'] = '/';
 				$_SESSION['KCFINDER']['uploadDir'] = $site_path;
 				$_SESSION['KCFINDER']['theme'] = 'default';
