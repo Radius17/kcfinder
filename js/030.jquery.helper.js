@@ -237,6 +237,9 @@
         },
 
         escapeDirs: function(path) {
+        	if(path.length>1){
+        		if(path.substr(0,2)=='//') path=path.replace('//', "/");
+        	}
             var fullDirExpr = /^([a-z]+)\:\/\/([^\/^\:]+)(\:(\d+))?\/(.+)$/,
                 prefix = "";
             if (fullDirExpr.test(path)) {
@@ -252,7 +255,6 @@
                 escapePath = '', i = 0;
             for (; i < dirs.length; i++)
                 escapePath += encodeURIComponent(dirs[i]) + '/';
-
             return prefix + escapePath.substr(0, escapePath.length - 1);
         },
 
