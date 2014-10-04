@@ -1,13 +1,24 @@
 # KCFinder web file manager
-http://kcfinder.sunhater.com  
-Pavel Tzonkov (sunhater@sunhater.com)
+Original KCFinder web file manager by Pavel Tzonkov (sunhater@sunhater.com) is on http://kcfinder.sunhater.com  
 
-## Overview
-KCFinder is free open-source replacement of CKFinder web file manager. It can be integrated into FCKeditor, CKEditor, and TinyMCE WYSIWYG web editors (or your custom web applications) to upload and manage images, flash movies, and other files that can be embedded into an editor's generated HTML content.
+# This fork is managing by Radius17 (radius17@gmail.com)
+# It can contain some features that are not compatible with original version
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE. 
 
 ## Licenses
 * GNU General Public License, version 3
 * GNU Lesser General Public License, version 3
+
+## Overview
+KCFinder is free open-source replacement of CKFinder web file manager. It can be integrated into FCKeditor, CKEditor, and TinyMCE WYSIWYG web editors (or your custom web applications) to upload and manage images, flash movies, and other files that can be embedded into an editor's generated HTML content.
 
 ## Features
 * Ajax engine with JSON responses

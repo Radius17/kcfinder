@@ -56,12 +56,13 @@ _.initToolbar = function() {
 
     $('#toolbar a[href="kcact:about"]').click(function() {
         var html = '<div class="box about">' +
-            '<div class="head"><a href="http://kcfinder.sunhater.com" target="_blank">KCFinder</a> ' + _.version + '</div>';
+            '<div class="head">KCFinder ' + _.version + '</div>';
         if (_.support.check4Update)
             html += '<div id="checkver"><span class="loading"><span>' + _.label("Checking for new version...") + '</span></span></div>';
         html +=
             '<div>' + _.label("Licenses:") + ' <a href="http://opensource.org/licenses/GPL-3.0" target="_blank">GPLv3</a> & <a href="http://opensource.org/licenses/LGPL-3.0" target="_blank">LGPLv3</a></div>' +
             '<div>Copyright &copy;2010-2014 Pavel Tzonkov</div>' +
+            '<div>This fork is managing by Radius17 &copy; 2014</div>' +
         '</div>';
 
         var dlg = _.dialog(_.label("About"), html, {width: 301});
