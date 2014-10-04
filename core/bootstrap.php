@@ -20,6 +20,7 @@
   *        array. It's recommended to use constants instead.
   */
 
+namespace kcfinder;
 
 // PHP VERSION CHECK
 if (!preg_match('/^(\d+\.\d+)/', PHP_VERSION, $ver) || ($ver[1] < 5.3))
@@ -31,17 +32,14 @@ if (ini_get("safe_mode"))
     die("The \"safe_mode\" PHP ini setting is turned on! You cannot run KCFinder in safe mode.");
 
 
-// CMS INTEGRATION
-if (isset($_GET['cms']) &&
-    (basename($_GET['cms']) == $_GET['cms']) &&
-    is_file("integration/{$_GET['cms']}.php")
-)
-    require "integration/{$_GET['cms']}.php";
-
-
 // REGISTER AUTOLOAD FUNCTION
 require "core/autoload.php";
 
+// CMS INTEGRATION
+$config = require("conf/config.php");
+if ($config['inCMS'] && $config['inCMS']!="REPLACE_WITH_YOUR_CMS") require "integration/{$config['inCMS']}.php";
+//if (isset($config['inCMS']) && (basename($config['inCMS']) == $config['inCMS']) && is_file("integration/{$config['inCMS']}.php")) require "integration/{$config['inCMS']}.php";
+//elseif (isset($_GET['cms']) && (basename($_GET['cms']) == $_GET['cms']) && is_file("integration/{$_GET['cms']}.php")) require "integration/{$_GET['cms']}.php";
 
 // json_encode() IMPLEMENTATION IF JSON EXTENSION IS MISSING
 if (!function_exists("json_encode")) {

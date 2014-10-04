@@ -96,21 +96,18 @@ class uploader {
 
     public function __construct() {
 
-        // SET CMS INTEGRATION PROPERTY
-        if (isset($_GET['cms']) &&
-            $this->checkFilename($_GET['cms']) &&
-            is_file("integration/{$_GET['cms']}.php")
-        )
-            $this->cms = $_GET['cms'];
-
 		// LINKING UPLOADED FILE
-        if (count($_FILES))
-            $this->file = &$_FILES[key($_FILES)];
+        if (count($_FILES)) $this->file = &$_FILES[key($_FILES)];
 
         // CONFIG & SESSION SETUP
         $session = new session("conf/config.php");
         $this->config = $session->getConfig();
         $this->session = &$session->values;
+
+        // SET CMS INTEGRATION PROPERTY
+        if ($this->config['inCMS'] && $this->config['inCMS']!="REPLACE_WITH_YOUR_CMS") $this->cms = $this->config['inCMS'];
+//        if ($this->config['inCMS'] && $this->checkFilename($this->config['inCMS']) && is_file("integration/{$this->config['inCMS']}.php")) $this->cms = $this->config['inCMS'];
+//        elseif (isset($_GET['cms']) && $this->checkFilename($_GET['cms']) && is_file("integration/{$_GET['cms']}.php")) $this->cms = $_GET['cms'];
 
         // IMAGE DRIVER INIT
         if (isset($this->config['imageDriversPriority'])) {
@@ -128,7 +125,8 @@ class uploader {
         // WATERMARK INIT
         if (isset($this->config['watermark']) && is_string($this->config['watermark']))
             $this->config['watermark'] = array('file' => $this->config['watermark']);
-
+        //var_dump($this->config);
+        
         // GET TYPE DIRECTORY
         $this->types = &$this->config['types'];
         $firstType = array_keys($this->types);
@@ -161,7 +159,6 @@ class uploader {
             $this->config['cookiePath'] = "/";
 
         // UPLOAD FOLDER INIT
-
         // FULL URL
         if (preg_match('/^([a-z]+)\:\/\/([^\/^\:]+)(\:(\d+))?\/(.+)\/?$/',
                 $this->config['uploadURL'], $patt)

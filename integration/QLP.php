@@ -26,12 +26,14 @@ class QLP{
             include_once($init_3);
             if(QLPSession::getInstance()->isLoggedIn()){
             	self::$authenticated = true;
+            	$_SESSION['KCFINDER']=null;
                 if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
                 if(!isset($_SESSION['KCFINDER']['disabled'])) $_SESSION['KCFINDER']['disabled'] = false;
                 $_SESSION['KCFINDER']['_check4htaccess'] = false;
                 $_SESSION['KCFINDER']['uploadURL'] = '/data/';
                 $_SESSION['KCFINDER']['uploadDir'] = $data_path;
                 $_SESSION['KCFINDER']['theme'] = 'default';
+                $_SESSION['KCFINDER']['types'] = array('gallery'   =>  "",'media'   =>  "");
             }
         }
         chdir($current_cwd);

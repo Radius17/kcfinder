@@ -1,6 +1,7 @@
 .idea/*
 upload/*
-cache/*
+cache/*.css
+cache/*.js
 [Tt]humbs.db
 *.DS_Store
 .htaccess

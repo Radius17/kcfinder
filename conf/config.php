@@ -21,11 +21,12 @@ return array(
 
 // GENERAL SETTINGS
 
-    'disabled' => false,
-    'uploadURL' => "upload",
+    'disabled' => true,
+    'inCMS' => 'REPLACE_WITH_YOUR_CMS',
+	// Default value must be REPLACE_WITH_YOUR_CMS
+	'uploadURL' => "upload",
     'uploadDir' => "",
     'theme' => "default",
-
     'types' => array(
 
     // (F)CKEditor types
@@ -38,7 +39,6 @@ return array(
         'media'   =>  "swf flv avi mpg mpeg qt mov wmv asf rm",
         'image'   =>  "*img",
     ),
-
 
 // IMAGE SETTINGS
 
@@ -110,7 +110,7 @@ return array(
 // THE FOLLOWING SETTINGS CANNOT BE OVERRIDED WITH SESSION SETTINGS
 
     '_sessionVar' => "KCFINDER",
-    '_check4htaccess' => true,
+    '_check4htaccess' => false,
     '_normalizeFilenames' => false,
     '_dropUploadMaxFilesize' => 10485760,
     //'_tinyMCEPath' => "/tiny_mce",
