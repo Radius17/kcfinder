@@ -26,8 +26,8 @@ class QLP{
 			include_once($init_3);
 			if(QLPSession::getInstance()->isLoggedIn()){
 				self::$authenticated = true;
-					$_SESSION['KCFINDER']=null;
-				if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
+				$_SESSION['KCFINDER'] = array();
+				//if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
 				if(!isset($_SESSION['KCFINDER']['disabled'])) $_SESSION['KCFINDER']['disabled'] = false;
 				$_SESSION['KCFINDER']['_check4htaccess'] = false;
 				$_SESSION['KCFINDER']['uploadURL'] = '/';
@@ -35,6 +35,8 @@ class QLP{
 				$_SESSION['KCFINDER']['theme'] = 'default';
 				$_SESSION['KCFINDER']['thumbsDir'] = "/data/.thumbs";
 				$_SESSION['KCFINDER']['types'] = array('data'   =>  "");
+			} else {
+				$_SESSION['KCFINDER'] = array();
 			}
 		}
 		chdir($current_cwd);
