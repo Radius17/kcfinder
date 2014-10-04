@@ -34,7 +34,7 @@ class QLP{
 				$_SESSION['KCFINDER']['uploadDir'] = $site_path;
 				$_SESSION['KCFINDER']['theme'] = 'default';
 				$_SESSION['KCFINDER']['thumbsDir'] = "/data/.thumbs";
-				$_SESSION['KCFINDER']['types'] = array('data'   =>  "");
+				$_SESSION['KCFINDER']['types'] = array('data' => "");
 			} else {
 				$_SESSION['KCFINDER'] = array();
 			}
