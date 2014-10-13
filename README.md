@@ -1,8 +1,8 @@
 # KCFinder web file manager
-Original KCFinder web file manager by Pavel Tzonkov (sunhater@sunhater.com) is on http://kcfinder.sunhater.com  
+##### Original KCFinder web file manager by Pavel Tzonkov (sunhater@sunhater.com) is on http://kcfinder.sunhater.com  
 
-### This fork is managing by Radius17 (radius17@gmail.com)
-It can contain some features that are not compatible with original version
+##### This fork is managing by Radius17 (radius17@gmail.com)
+##### It can contain some features that are not compatible with original version
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
