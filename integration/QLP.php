@@ -30,6 +30,7 @@ class QLP{
 				if(!isset($_SESSION['KCFINDER'])) $_SESSION['KCFINDER'] = array();
 //				if(!isset($_SESSION['KCFINDER']['disabled'])) $_SESSION['KCFINDER']['disabled'] = false;
 				$_SESSION['KCFINDER']['disabled'] = false;
+				$_SESSION['KCFINDER']['lang'] = explode('-', QLPConfig::$defaultLang)[0];
 				$_SESSION['KCFINDER']['_check4htaccess'] = true;
 				$_SESSION['KCFINDER']['uploadURL'] = '/';
 				$_SESSION['KCFINDER']['uploadDir'] = $site_path;

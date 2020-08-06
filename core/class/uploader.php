@@ -215,14 +215,15 @@ class uploader {
             $this->opener['name'] = false;
 
         // LOCALIZATION
-        foreach ($this->langInputNames as $key)
-            if (isset($_GET[$key]) &&
-                preg_match('/^[a-z][a-z\._\-]*$/i', $_GET[$key]) &&
-                file_exists("lang/" . strtolower($_GET[$key]) . ".php")
-            ) {
+        if ( isset($this->config['lang']) && is_file("lang/" . strtolower($this->config['lang']) . ".php") ) {
+            $this->lang = $this->config['lang'];
+        }
+        foreach ($this->langInputNames as $key){
+            if ( isset($_GET[$key]) && preg_match('/^[a-z][a-z\._\-]*$/i', $_GET[$key]) && is_file("lang/" . strtolower($_GET[$key]) . ".php")  ) {
                 $this->lang = $_GET[$key];
                 break;
             }
+        }
         $this->localize($this->lang);
 
         // IF BROWSER IS ENABLED

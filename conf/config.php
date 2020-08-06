@@ -26,6 +26,7 @@ return array(
 	// Default value must be REPLACE_WITH_YOUR_CMS
 	'uploadURL' => "upload",
     'uploadDir' => "",
+    'lang' => "en",
     'theme' => "default",
     'types' => array(
 
