@@ -150,6 +150,20 @@ abstract class image {
         return $height;
     }
 
+/** Returns comparising memory limit with value
+  * @param integer $val
+  * @return boolean */
+	final public function checkMemoryLimitOverload($val) {
+		$memory_limit = ini_get('memory_limit');
+		if (preg_match('/^(\d+)(.)$/', $memory_limit, $matches)) {
+			if ($matches[2] == 'M') {
+				$memory_limit = $matches[1] * 1024 * 1024; // nnnM -> nnn MB
+			} else if ($matches[2] == 'K') {
+				$memory_limit = $matches[1] * 1024; // nnnK -> nnn KB
+			}
+		}
+		return $val >= $memory_limit;
+	}
 
 /** Checks if PHP needs some extra extensions to use the image driver. This
   * static method should be implemented into driver classes like abstract

@@ -108,12 +108,12 @@ _.menuFile = function(file, e) {
                 });
         }
 
-        if (data.thumb || data.smallThumb || _.support.zip) {
+        if (data.isImage || _.support.zip) {
 
             _.menu.addDivider();
 
             // VIEW IMAGE
-            if (data.thumb || data.smallThumb)
+            if (data.isImage)
                 _.menu.addItem("kcact:view", _.label("View"), function() {
                     _.viewImage(data);
                 });
@@ -244,7 +244,7 @@ _.menuFile = function(file, e) {
         }
 
         // VIEW IMAGE
-        if (data.thumb || data.smallThumb)
+        if (data.isImage)
             _.menu.addItem("kcact:view", _.label("View"), function() {
                 _.viewImage(data);
             });

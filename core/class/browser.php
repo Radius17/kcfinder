@@ -747,7 +747,8 @@ class browser extends uploader {
                 'bigIcon' => $bigIcon,
                 'smallIcon' => $smallIcon,
                 'thumb' => $thumb,
-                'smallThumb' => $smallThumb
+                'smallThumb' => $smallThumb,
+                'isImage' =>$img->isImage()
             );
         }
         return $return;

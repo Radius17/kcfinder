@@ -203,7 +203,6 @@ class image_gd extends image {
     }
 
     protected function getImage($image, &$width, &$height) {
-
         if (is_resource($image) && (get_resource_type($image) == "gd")) {
             $width = @imagesx($image);
             $height = @imagesy($image);
@@ -214,6 +213,7 @@ class image_gd extends image {
         } elseif (is_string($image) &&
             (false !== (list($width, $height, $t) = @getimagesize($image)))
         ) {
+        	if($this->checkMemoryLimitOverload($width * $height * 4)) return false;
             $image =
                 ($t == IMAGETYPE_GIF)  ? @imagecreatefromgif($image)  : (
                 ($t == IMAGETYPE_WBMP) ? @imagecreatefromwbmp($image) : (

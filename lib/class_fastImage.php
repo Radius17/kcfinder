@@ -45,7 +45,9 @@ class fastImage
       ))
     );
   }
-
+  public function isImage(){
+  	return in_array($this->type, array("bmp", "gif", "jpeg", "png"));
+  }
   public function isValid()
   {
     return empty($this->handle) ? false : true;
